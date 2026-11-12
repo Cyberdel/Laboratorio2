@@ -1,29 +1,33 @@
-# Laboratorio2
-Trabajo grupal Galahad Constante y Melane Herreria 
-# Laboratorio 02: Eficiencia y Complejidad Algorítmica
+# Laboratory 02: Algorithmic Efficiency and Complexity
 
-*Universidad Central del Ecuador*  
-*Carrera:* Ingeniería en Sistemas de Información – Cuarto Semestre  
-*Asignatura:* Algoritmos (Semana 2)  
+**Group project:** Galahad Constante and Melane Herreria  
+**Universidad Central del Ecuador**  
+**Program:** Information Systems Engineering – Fourth Semester  
+**Course:** Algorithms (Week 2)
 
 ---
 
-## 1. Descripción del Problema
-El objetivo de este laboratorio es implementar, medir, comparar y justificar dos estrategias algorítmicas diferentes que resuelven un mismo problema: *detectar y separar elementos únicos y repetidos* dentro de un conjunto de datos[span_1](start_span)[span_1](end_span). 
+## 1. Problem Description
+The goal of this laboratory is to implement, measure, compare, and justify two algorithmic strategies that solve the same problem: **detecting and separating unique and duplicate elements** within a dataset.
 
-Para cumplir con el análisis de complejidad, se contrastan dos enfoques:
-* *Estrategia A (Búsqueda Secuencial Manual):* Utiliza bucles anidados y arreglos auxiliares creados desde cero para comparar cada elemento de la entrada con los elementos únicos ya almacenados.
-* *Estrategia B (Estructura Auxiliar / Tabla Hash):* Utiliza estructuras de datos optimizadas (HashSet / HashMap) para realizar búsquedas e inserciones en tiempo constante promedio.
+* **Strategy A (Manual sequential search):** uses nested loops and auxiliary arrays built from scratch to compare each input element against the uniques already stored.
+* **Strategy B (Auxiliary structure / Hash table):** uses `HashSet` / `HashMap`, with lookups and insertions in average constant time.
 
-## 2. Hipótesis
-La *Estrategia B* escalará de manera lineal ($O(n)$)[span_2](start_span)[span_2](end_span), procesando grandes volúmenes de datos en milisegundos, mientras que la *Estrategia A* presentará un crecimiento cuadrático ($O(n^2)$) debido a sus bucles anidados, volviéndose computacionalmente inviable a medida que el tamaño de entrada ($n$) aumente de forma exponencial[span_3](start_span)[span_3](end_span).
+## 2. Hypothesis
+**Strategy B** will scale linearly, O(n), processing large volumes of data in milliseconds. **Strategy A** will show quadratic growth, O(n²), due to its nested loops, and will become impractical as n grows by orders of magnitude (100, 1,000, 10,000, 100,000, 1,000,000).
 
-## 3. Estructura del Repositorio
-```text
-laboratorio-02-eficiencia-complejidad/
-├── README.md                          # Documentación principal del proyecto
-├── analysis.md                        # Interpretación técnica y justificación de escalabilidad
+## 3. Repository Structure
+This repository contains only the source code of the two strategies:
+
+```
+Laboratorio2/
 ├── src/
-│   └── EliminarRepetidos.java         # Código fuente instrumentado con conteo de operaciones y tiempo
-└── results/
-    └── resultados_benchmark.md        # Tablas de benchmarking y registros experimentales
+│   ├── AlgorithmA.java   # Strategy A: sequential search (O(n²))
+│   └── AlgorithmB.java   # Strategy B: HashMap / HashSet (O(n))
+└── README.md
+```
+
+## 4. How to Run
+1. Open the project in IntelliJ IDEA.
+2. Run the `main` method of `AlgorithmA.java` or `AlgorithmB.java`.
+3. The number of operations and the time (ms) are printed for each n.
